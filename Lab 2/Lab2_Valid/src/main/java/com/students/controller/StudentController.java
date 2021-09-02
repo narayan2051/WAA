@@ -28,10 +28,6 @@ public class StudentController {
         }
         return "success";
     }
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        // binder.setDisallowedFields(new String[]{"firstName"});
-    }
 }
 
 	
