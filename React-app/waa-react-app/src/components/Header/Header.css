@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background-color: skyblue;
+  height: 8vh;
+  align-items: center;
+}
+
+.header div {
+  width: 50%;
+}
+
+a{
+  text-decoration: none;
+}

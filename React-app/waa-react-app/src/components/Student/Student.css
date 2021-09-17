@@ -1,0 +1,15 @@
+.student {
+  background-color: skyblue;
+  width: 30%;
+  margin: 1em;
+}
+.student:hover {
+  background-color: greenyellow;
+}
+p {
+  padding: 1em;
+}
+
+button {
+  margin: 2px;
+}
