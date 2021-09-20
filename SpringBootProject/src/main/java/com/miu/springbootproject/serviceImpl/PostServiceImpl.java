@@ -3,6 +3,7 @@ package com.miu.springbootproject.serviceImpl;
 import com.miu.springbootproject.model.Post;
 import com.miu.springbootproject.model.PostV2;
 import com.miu.springbootproject.repository.PostRepository;
+import com.miu.springbootproject.repository.UserRepository;
 import com.miu.springbootproject.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,12 @@ import java.util.List;
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public PostServiceImpl(PostRepository postRepository) {
+    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository) {
         this.postRepository = postRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -56,5 +59,7 @@ public class PostServiceImpl implements PostService {
         Post p = getById(id);
         return null == p ? null : new PostV2(p.getId(), p.getTitle(), p.getContent());
     }
+
+
 
 }

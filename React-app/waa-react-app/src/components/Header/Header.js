@@ -21,28 +21,24 @@ const Header = (props) => {
   };
 
   return (
-    <div className="header">
-      <div>
-        <Link to="/posts">
-        Posts
-        </Link>
-      </div>
-      <div>
-        <Link to="/add-post">
-         New Post
-        </Link>
-      </div>
-      {username && (
-        <div className="header">
-          <div>
-            <Link to="#">profile</Link>
-          </div>
-          <div>
-             Welcome {username}
-          </div>
+    localStorage.getItem("auth") && (
+      <div className="header">
+        <div>
+          <Link to="/posts">Posts</Link>
         </div>
-      )}
-    </div>
+        <div>
+          <Link to="/add-post">New Post</Link>
+        </div>
+        {username && (
+          <div className="header">
+            <div>
+              <Link to="#">profile</Link>
+            </div>
+            <div>Welcome {username}</div>
+          </div>
+        )}
+      </div>
+    )
   );
 };
 

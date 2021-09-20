@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HTTPClient, postUrl } from "../../api/API";
 import "./Post.css";
 
 const PostDetail = (props) => {
-
   const handleDelete = (id) => {
     HTTPClient.delete(postUrl + "/" + id)
       .then((response) => {

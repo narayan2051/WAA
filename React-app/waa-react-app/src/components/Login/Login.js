@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
-import { BASE_URL, HTTPClient, loggedInUser } from "../../api/API";
+import { BASE_URL, HTTPClient } from "../../api/API";
 import img from "./download.png";
 import "./Login.css";
 
 const Login = (props) => {
-  const [formData, setFormData] = useState({ userName: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,9 +34,9 @@ const Login = (props) => {
             placeholder="Enter Username"
             name="uname"
             required
-            value={formData.userName}
+            value={formData.username}
             onChange={(evnt) =>
-              setFormData((prev) => ({ ...prev, userName: evnt.target.value }))
+              setFormData((prev) => ({ ...prev, username: evnt.target.value }))
             }
           />
 
@@ -56,7 +55,7 @@ const Login = (props) => {
           />
           <button type="submit">Login</button>
           <label>
-            <input type="checkbox" checked="checked" name="remember" /> Remember
+            <input type="checkbox" name="remember" /> Remember
             me
           </label>
         </div>
